@@ -6,7 +6,7 @@ my $num;
 my $fh;
 
 foreach $fh (@ARGV) {
-        system(blastn -query $fh -db est_db -out est_matches -outfmt \"6 std qlen slen\");
+        system(blastn -query $fh -db est_db -out est_matches -outfmt \" 6 std qlen slen\");
         open(FILE, "<est_matches($fh)") or die "Something is wrong. Look at this: $!";
         open(NFILE, ">est_matches($fh).tex") or die "This couldn't be opened. Here's why: $!";
          print NFILE "\\documentclass{report} \n";
